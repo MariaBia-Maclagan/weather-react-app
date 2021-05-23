@@ -1,0 +1,49 @@
+h1 {
+    font-size: 40px;
+    display: inline;
+    padding: 0 auto;
+    font-family: "Yantramanav", sans-serif;
+    color: #d5eeff;
+  }
+  .cloud-icon {
+    font-size: 40px;
+    position: relative;
+    right: -20px;
+    bottom: -10px;
+    padding: 0 auto;
+    color: #d5eeff;
+  }
+  p.temperature-today {
+    font-size: 13px;
+    padding: 0;
+    font-family: "M PLUS 1p", sans-serif;
+    color: #ffab5d;
+  }
+  p.precipitation-today {
+    font-size: 12px;
+    position: relative;
+    right: -20px;
+    font-family: "M PLUS 1p", sans-serif;
+    color: #ffab5d;
+  }
+  h2 {
+    font-size: 50px;
+    position: relative;
+    left: 20px;
+    font-family: "Yantramanav", sans-serif;
+    padding: 0;
+    color: #d5eeff;
+  }
+  .degree {
+    font-size: 16px;
+    position: relative;
+    top: -24px;
+    left: -1px;
+    text-decoration: none;
+    color: #d5eeff;
+  }
+  h2.temperature-now {
+    display: block;
+    margin: 0 0 0 30px;
+  }
+  

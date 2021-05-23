@@ -1,0 +1,15 @@
+.openSource {
+    text-align: center;
+    position: relative;
+    top: -90px;
+    font-family: "M PLUS 1p", sans-serif;
+    font-size: 13px;
+  }
+  .code {
+    text-decoration: none;
+    color: #007cb9;
+  }
+  .code:hover {
+    color: #2da3d6;
+  }
+  
