@@ -1,23 +1,30 @@
-import React from "react";
+import React, { useState} from "react";
+import axios from "axios";
 import "./Weather.css";
 
-export default function Weather() {
-  let weatherData = {
-    city: "London",
-    temperature: 18,
-    date: "Friday 10:30",
-    description: "Sunny",
-    humidity: 80,
-    wind: 2,
-    max: 13,
-    min: 7
-  };
+export default function Weather(props) {
+  const [ready, setReady] = useState (false);
+  const [WeatherData, setWeatherData] = useState ({});
+  function handleResponse(response){
+    setWeatherData ({
+      temperature: response.data.main.temp,
+      wind: response.data.wind.speed,
+      humidity: response.data.main.humidity,
+      date: new Date(response.data.dt * 1000),
+      city:  response.data.name,
+      description: response.data.weather[0].description,
+      min: response.data.main.temp_min,
+      max: response.data.main.temp_max
+    });
+    setReady (true);
+  }
 
-  return (
-    <div className="Weather">
+  if (ready){
+    return (
+      <div className="Weather">
       <div className="row">
         <div className="col-8">
-          <h1>{weatherData.city}</h1>
+          <h1>{WeatherData.city}</h1>
         </div>
         <div className="col-4">
           <i className="fas fa-cloud cloud-icon"></i>
@@ -26,30 +33,35 @@ export default function Weather() {
       <div className="row">
         <div className="col-4">
           <p className="temperature-today">
-            <span> {weatherData.date}</span>
+            <span> <FormatDate date={WeatherData.date}/> </span>
             <br />
-            <span>{weatherData.description}</span>
+            <span>{WeatherData.description}</span>
             <br />
             <span>
-              {weatherData.min}° / {weatherData.min}°
+              {Math.round(WeatherData.min)}° / {Math.round(WeatherData.max)}°
             </span>
           </p>
         </div>
         <div className="col-4">
           <h2 className="temperature-now">
-            <span>{weatherData.temperature}</span>
+            <span>{Math.round(WeatherData.temperature)}</span>
             <span className="degree">°C</span>
           </h2>
         </div>
         <div className="col-4">
           <p className="precipitation-today">
             <br />
-            Wind: <span>{weatherData.wind}</span>km/h
+            Wind: <span>{Math.round(WeatherData.wind)}</span>km/h
             <br />
-            Humidity: <span>{weatherData.humidity}</span>%
+            Humidity: <span>{WeatherData.humidity}</span>%
           </p>
         </div>
       </div>
     </div>
-  );
+    );
+  } else {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=bb872f49cc68a55123bc66fe7274548f&units=metric`;
+    axios.get(url).then(handleResponse);
+    return "Loading...";
+  }
 }

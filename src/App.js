@@ -15,7 +15,7 @@ export default function App() {
           <div className="card-body">
             <Search />
             <br />
-            <Weather />
+            <Weather defaultCity="London"/>
             <Forecast />
             <br />
             <Switch />
