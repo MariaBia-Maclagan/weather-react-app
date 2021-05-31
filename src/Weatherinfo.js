@@ -8,7 +8,9 @@ export default function Weatherinfo (props){
           <h1>{props.data.city}</h1>
         </div>
         <div className="col-4">
-          <i className="fas fa-cloud cloud-icon"></i>
+          <img 
+          src={props.data.icon} 
+          alt={props.data.description}/>
         </div>
       </div>
       <div className="row">
