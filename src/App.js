@@ -1,5 +1,5 @@
 import React from "react";
-import Search from "./Search";
+
 import Weather from "./Weather";
 import Forecast from "./Forecast";
 import Switch from "./Switch";
@@ -13,8 +13,6 @@ export default function App() {
       <div className="container">
         <div className="card">
           <div className="card-body">
-            <Search />
-            <br />
             <Weather defaultCity="London"/>
             <Forecast />
             <br />

@@ -1,0 +1,42 @@
+import React from "react";
+import FormatDate from "./FormatDate";
+
+export default function Weatherinfo (props){
+    return (<div>
+        <div className="row">
+        <div className="col-8">
+          <h1>{props.data.city}</h1>
+        </div>
+        <div className="col-4">
+          <i className="fas fa-cloud cloud-icon"></i>
+        </div>
+      </div>
+      <div className="row">
+        <div className="col-4">
+          <p className="temperature-today">
+            <span> <FormatDate date={props.data.date}/> </span>
+            <span>{props.data.description}</span>
+            <br />
+            <span>
+              {Math.round(props.data.min)}° / {Math.round(props.data.max)}°
+            </span>
+          </p>
+        </div>
+        <div className="col-4">
+          <h2 className="temperature-now">
+            <span>{Math.round(props.data.temperature)}</span>
+            <span className="degree">°C</span>
+          </h2>
+        </div>
+        <div className="col-4">
+          <p className="precipitation-today">
+            <br />
+            Wind: <span>{Math.round(props.data.wind)}</span>km/h
+            <br />
+            Humidity: <span>{props.data.humidity}</span>%
+          </p>
+        </div>
+      </div>
+      </div>
+    )
+}
