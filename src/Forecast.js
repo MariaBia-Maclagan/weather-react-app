@@ -1,76 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Forecast.css";
+import axios from "axios";
+import Forecastday from "./Forecastday";
 
-export default function Forecast() {
+export default function Forecast(props) {
+  const [ready, setReady] = useState(false);
+  const [forecastData, setForecastData] = useState(null);
+
+  function handleResponse(response) {
+setForecastData (response.data.daily);
+setReady (true);
+
+}
+if (ready){
+  console.log(forecastData);
   return (
-    <ul className="Forecast">
+    <div className="Forecast">
       <div className="row">
-        <div className="col-8">
-          <li>
-            <div>
-              <i className="far fa-sun icon"></i>
-              <span> Saturday</span>
-            </div>
-          </li>
-        </div>
-        <div className="col-4">
-          <li>
-            <strong>7°</strong> <span>/ 13°</span>
-          </li>
-        </div>
-        <div className="col-8">
-          <li>
-            <div>
-              <i className="far fa-sun icon"></i>
-              <span> Sunday</span>
-            </div>
-          </li>
-        </div>
-        <div className="col-4">
-          <li>
-            <strong>7°</strong> <span>/ 13°</span>
-          </li>
-        </div>
-        <div className="col-8">
-          <li>
-            <div>
-              <i className="far fa-sun icon"></i>
-              <span> Monday</span>
-            </div>
-          </li>
-        </div>
-        <div className="col-4">
-          <li>
-            <strong>7°</strong> <span>/ 13°</span>
-          </li>
-        </div>
-        <div className="col-8">
-          <li>
-            <div>
-              <i className="far fa-sun icon"></i>
-              <span> Tuesday</span>
-            </div>
-          </li>
-        </div>
-        <div className="col-4">
-          <li>
-            <strong>7°</strong> <span>/ 13°</span>
-          </li>
-        </div>
-        <div className="col-8">
-          <li>
-            <div>
-              <i className="far fa-sun icon"></i>
-              <span> Wednesday</span>
-            </div>
-          </li>
-        </div>
-        <div className="col-4">
-          <li>
-            <strong>7°</strong> <span>/ 13°</span>
-          </li>
-        </div>
-      </div>
-    </ul>
+
+      <div className="col-8" >
+      <Forecastday data= {forecastData[0]} />
+    </div>
+    </div>
+    </div>
+    
   );
+  
+} else {
+  let longitude = props.coordinates.lon;
+  let latitude = props.coordinates.lat;
+  let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=bb872f49cc68a55123bc66fe7274548&units=metric`;
+  
+  axios.get(url).then(handleResponse);
+  return null;
+}
 }

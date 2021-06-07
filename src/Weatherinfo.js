@@ -9,7 +9,7 @@ export default function Weatherinfo (props){
           <h1>{props.data.city}</h1>
         </div>
         <div className="col-4">
-          < WeatherIcon code={props.data.icon} alt={props.data.description}/>
+          < WeatherIcon code={props.data.icon} alt={props.data.description} size={50}/>
         </div>
       </div>
       <div className="row">
@@ -26,7 +26,7 @@ export default function Weatherinfo (props){
         <div className="col-4">
           <h2 className="temperature-now">
             <span>{Math.round(props.data.temperature)}</span>
-            <span className="degree">°C</span>
+            <span className="degree">°C </span>
           </h2>
         </div>
         <div className="col-4">
