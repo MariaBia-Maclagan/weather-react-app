@@ -6,6 +6,7 @@
   box-shadow: rgb(0 0 0 / 20%) 0 3px 3px 0;
   border: none;
   border-radius: 15px;
+  margin-bottom: 30px;
 }
 .button {
   font-size: 13px;
@@ -19,37 +20,20 @@
   color: #d5eeff;
   background-color: #2da3d6;
 }
-.current-location-icon {
-  font-size: 25px;
-  color: #007cb9;
-  position: relative;
-  top: 5px;
-}
-.current-location-icon:hover {
-  color: #2da3d6;
-}
 h1 {
     font-size: 40px;
     display: inline;
-    padding: 0 auto;
+    padding: 20px auto;
     font-family: "Yantramanav", sans-serif;
     color: #d5eeff;
   }
-  .cloud-icon {
-    font-size: 40px;
-    position: relative;
-    right: -20px;
-    bottom: -10px;
-    padding: 0 auto;
-    color: #d5eeff;
-  }
-  p.temperature-today {
+  .temperature-today {
     font-size: 13px;
     padding: 0;
     font-family: "M PLUS 1p", sans-serif;
     color: #ffab5d;
   }
-  p.precipitation-today {
+  .precipitation-today {
     font-size: 12px;
     position: relative;
     right: -20px;

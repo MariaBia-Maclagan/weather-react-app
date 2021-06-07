@@ -14,14 +14,14 @@ export default function Weatherinfo (props){
       </div>
       <div className="row">
         <div className="col-4">
-          <p className="temperature-today">
+          <div className="temperature-today">
             <span> <FormatDate date={props.data.date}/> </span>
             <span>{props.data.description}</span>
             <br />
             <span>
               {Math.round(props.data.min)}° / {Math.round(props.data.max)}°
             </span>
-          </p>
+          </div>
         </div>
         <div className="col-4">
           <h2 className="temperature-now">

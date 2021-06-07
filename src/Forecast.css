@@ -1,16 +1,16 @@
 ul {
     display: block;
     margin: 0 60px;
-    list-style: none;
     padding: 0;
+   
   }
   li {
     padding: 10px 0;
     font-family: "M PLUS 1p", sans-serif;
     color: #ffab5d;
     font-size: 15px;
+    list-style: none;
+    text-align: center;
   }
-  .icon {
-    font-size: 18px;
-  }
+  
   

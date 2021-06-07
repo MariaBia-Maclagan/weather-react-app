@@ -51,12 +51,6 @@ setCity (event.target.value);
         {" "}
         <input type="submit" value="search" className="btn btn-info button" />
       </span>
-      <span>
-        {" "}
-        <a href=" ">
-          <i className="fas fa-map-marker-alt current-location-icon"></i>
-        </a>
-      </span>
     </form>
       < Weatherinfo data={WeatherData}/>
       < Forecast coordinates={WeatherData.coordinates}/>
