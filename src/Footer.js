@@ -11,9 +11,9 @@ export default function Footer() {
           rel="noreferrer"
           className="code"
         >
-          Open source-code,
+          Open source-code, 
         </a>
-        by M. F. Maclagan
+         by M. F. Maclagan
       </p>
     </div>
   );

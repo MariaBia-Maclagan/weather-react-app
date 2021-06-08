@@ -16,7 +16,7 @@ export default function Weatherinfo (props){
         <div className="col-4">
           <div className="temperature-today">
             <span> <FormatDate date={props.data.date}/> </span>
-            <span>{props.data.description}</span>
+            <span className="text-capitalize">{props.data.description}</span>
             <br />
             <span>
               {Math.round(props.data.min)}° / {Math.round(props.data.max)}°
