@@ -8,8 +8,8 @@ export default function Weatherinfo (props){
         <div className="col-8">
           <h1>{props.data.city}</h1>
         </div>
-        <div className="col-4">
-          < WeatherIcon code={props.data.icon} alt={props.data.description} size={50}/>
+        <div className="col-4 weather" >
+          < WeatherIcon code={props.data.icon} alt={props.data.description} size={60}/>
         </div>
       </div>
       <div className="row">

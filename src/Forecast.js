@@ -38,7 +38,7 @@ return (
   let apiKey = "bb872f49cc68a55123bc66fe7274548f"
   let longitude = props.coordinates.lon;
   let latitude = props.coordinates.lat;
-  let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;;
+  let url =`https://api.openweathermap.org/data/2.5/onecall?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=metric`;
   
   axios.get(url).then(handleResponse);
   return (null);

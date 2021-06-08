@@ -8,7 +8,7 @@ function day(){
     let day = date.getDay();
 
     let days = [
-        "Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat" 
+     "Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun" 
     ]
 
     return days[day];
@@ -18,13 +18,13 @@ return (
     <div>
     <div>
           <li>
-            <div>
-              < WeatherIcon code={props.data.weather[0].icon} size= {20}/>
+            <div className="Weather-Icon">
+              < WeatherIcon code={props.data.weather[0].icon} size= {35} />
               <span> {day()}</span>
             </div>
           </li>
         </div>
-        <div className="col-4">
+        <div className="col-4 max-min">
           <li>
             <strong> {Math.round(props.data.temp.min)}°</strong> <span>/ {Math.round(props.data.temp.max)}°</span>
           </li>

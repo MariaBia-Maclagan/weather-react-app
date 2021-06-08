@@ -29,21 +29,20 @@ h1 {
   }
   .temperature-today {
     font-size: 13px;
-    padding: 0;
+    padding: 0, 20px;
     font-family: "M PLUS 1p", sans-serif;
     color: #ffab5d;
   }
   .precipitation-today {
     font-size: 12px;
     position: relative;
-    right: -20px;
+    right: -10px;
     font-family: "M PLUS 1p", sans-serif;
     color: #ffab5d;
   }
   h2 {
     font-size: 50px;
     position: relative;
-    left: 20px;
     font-family: "Yantramanav", sans-serif;
     padding: 0;
     color: #d5eeff;
@@ -59,5 +58,9 @@ h1 {
   h2.temperature-now {
     display: block;
     margin: 0 0 0 30px;
+  }
+
+  .weather canvas {
+    margin-left: 20px;
   }
   
